@@ -29,6 +29,11 @@ app.get('/:shortId', (req, res) => {
   }
 });
 
+// Endpoint to redirect the home page
+app.get('/', (req, res) => {
+  res.redirect('/shorten');
+});
+
 // Helper function to generate a unique short ID
 function generateShortId() {
   return crypto.randomBytes(3).toString('hex');
